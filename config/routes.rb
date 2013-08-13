@@ -1,5 +1,5 @@
 WhatSupp::Application.routes.draw do
-  devise_for :user
+  devise_for :users
   resources :statuses
   root to: 'statuses#index'
 

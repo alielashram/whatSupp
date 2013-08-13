@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130811091133) do
+ActiveRecord::Schema.define(version: 20130813071942) do
 
   create_table "statuses", force: true do |t|
     t.text     "supplication"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20130811091133) do
 
   add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
 
-  create_table "user", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "profile_name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20130811091133) do
     t.datetime "updated_at"
   end
 
-  add_index "user", ["email"], name: "index_user_on_email", unique: true
-  add_index "user", ["reset_password_token"], name: "index_user_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
