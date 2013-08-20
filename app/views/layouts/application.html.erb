@@ -16,7 +16,7 @@
   				</ul>
   				<ul class="nav navbar-nav pull-right">
   					<% if user_signed_in? %>
-  					<li><%= link_to current_user.first_name, edit_user_registration_path %></li>
+  					<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
   					<li><%= link_to "log_out", logout_path %></li>
   					<% else %>
   						<li><%= link_to "Register", register_path %></li>

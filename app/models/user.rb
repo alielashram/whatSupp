@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  validates :first_name, presence: true
+  validates :first_name, presence: true  
 
   validates :last_name, presence: true
 
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   								message: "Must be formatted correctly."
   							}
 
-  has_many :statuses
+  has_many :statuses, dependent: :destroy
 
   def full_name
   	first_name + " " + last_name

@@ -10,6 +10,8 @@ gem "devise", "~> 3.0.2"
 
 gem 'simple_form', '~> 3.0.0.rc'
 
+gem "letter_opener", :group => :development
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
