@@ -4,11 +4,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 gem "devise", "~> 3.0.2"
 
 gem 'simple_form', '~> 3.0.0.rc'
+
+group :development, :test do
+	gem 'sqlite3'
+end
 
 gem "letter_opener", :group => :development
 
