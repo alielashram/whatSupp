@@ -1,12 +1,13 @@
 <div class="page-header">
-  <h1>All Supplications</h1>
+  <h1>Supplication Feed</h1>
 </div>
 
 <%= link_to "Post a New Supplication", new_status_path, class: "btn btn-success" %>
 
 <% @statuses.each do |status| %>
 <div class="status">
-  <strong><%= status.user.full_name %></strong>
+      <%= image_tag status.user.gravatar_url %>
+  <strong><%= status.user.profile_name %></strong>
   <p><%= status.supplication %></p>
   <div class="meta">
     <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
