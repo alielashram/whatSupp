@@ -56,7 +56,6 @@ class StatusesControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_path
   end
 
-
   test "should update status when logged in" do
     sign_in users(:ali)
     patch :update, id: @status, status: { supplication: @status.supplication }

@@ -60,8 +60,8 @@ class StatusesController < ApplicationController
   def destroy
     @status.destroy
     respond_to do |format|
-      format.html { redirect_to statuses_url }
-      format.json { head :no_content }
+        format.html { redirect_to statuses_url }
+        format.json { head :no_content }
     end
   end
 
