@@ -13,6 +13,8 @@ group :production do
 	gem "pg"
 end
 
+gem 'rails_12factor', group: :production
+
 gem "devise", "~> 3.0.2"
 
 gem 'simple_form', '~> 3.0.0.rc'
