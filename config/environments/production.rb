@@ -81,4 +81,16 @@ WhatSupp::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.assets.precompile += %w[ bootstrap.css bootstrap.js ]
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "gmail.com",
+  :authentication => :login,
+  :user_name => "whatsupplication@gmail.com",
+  :password => "Alhamdulillah",
+}
 end
