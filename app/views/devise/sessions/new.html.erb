@@ -17,9 +17,9 @@
     <div><%= f.check_box :remember_me %><div></div><%= f.label :remember_me %></div>
   <% end -%>
   <br>
-  <div><%= f.button :submit, "Sign in" %></div>
+  <div class="actions"><%= f.button :submit, "Sign in" %></div>
 <% end %>
-<br>
+<p>Complete your profile by signing up for a gravatar at <%= link_to 'Gravatar.com', 'https://en.gravatar.com/site/signup/', target: '_blank' %></p>
 <%= render "devise/shared/links" %>
 
 	

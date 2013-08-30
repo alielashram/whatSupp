@@ -17,9 +17,9 @@
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
+  <%= f.password_field :current_password %></div><br>
+  <p>Complete your profile by signing up for a gravatar at <%= link_to 'Gravatar.com', 'https://en.gravatar.com/site/signup/', target: '_blank' %></p>
+  <div class="actions"><%= f.submit "Update" %></div>
 <% end %>
 
 <h3>Cancel my account</h3>
