@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   								message: "Must be formatted correctly."
   							}
 
-  has_many :statuses, dependent: :destroy
+  has_many :statuses, dependent: :delete_all
 
   def full_name
   	first_name + " " + last_name
