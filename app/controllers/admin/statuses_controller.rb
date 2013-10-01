@@ -63,7 +63,7 @@ class Admin::StatusesController < ApplicationController
     end
 
     def authenticate_admin!
-      redirect_to admin_status_url unless current_user.admin? 
+      redirect_to statuses_url unless current_user.admin? 
     end
 
 
