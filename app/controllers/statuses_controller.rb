@@ -63,8 +63,21 @@ class StatusesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    #def set_status
+     # @status = current_user.statuses.find(params[:id])
+    #end
+    
+
     def set_status
-      @status = current_user.statuses.find(params[:id])
+      if current_user.admin? 
+        @status = statuses.find(params[:id])
+      else
+        @status = current_user.statuses.find(params[:id])
+      end
+    end
+
+    def statuses
+      @statuses = Status.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

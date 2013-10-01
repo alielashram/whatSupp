@@ -20,7 +20,9 @@ class Admin::StatusesController < ApplicationController
   end
 
   # GET /statuses/new
-  
+  def new
+    @status = Status.new
+  end
 
   # GET /statuses/1/edit
   def edit
@@ -35,7 +37,7 @@ class Admin::StatusesController < ApplicationController
   def update
     respond_to do |format|
       if @status.update(status_params)
-        format.html { redirect_to @status, notice: 'Status was successfully updated.' }
+        format.html { redirect_to admin_status_path, notice: 'Status was successfully updated.' }
       else
         format.html { render action: 'edit' }
       end
