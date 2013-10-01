@@ -1,5 +1,7 @@
-class StatusesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+class Admin::StatusesController < ApplicationController
+  before_action :authenticate_user!
+
+  before_action :authenticate_admin!
 
   before_action :set_status, only: [:edit, :update, :destroy]
 
@@ -18,9 +20,7 @@ class StatusesController < ApplicationController
   end
 
   # GET /statuses/new
-  def new
-    @status = Status.new
-  end
+  
 
   # GET /statuses/1/edit
   def edit
@@ -28,17 +28,7 @@ class StatusesController < ApplicationController
 
   # POST /statuses
   # POST /statuses.json
-  def create
-    @status = current_user.statuses.build(status_params)
-
-    respond_to do |format|
-      if @status.save
-        format.html { redirect_to @status, notice: 'Status was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
-    end
-  end
+ 
 
   # PATCH/PUT /statuses/1
   # PATCH/PUT /statuses/1.json
@@ -64,12 +54,17 @@ class StatusesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_status
-      @status = current_user.statuses.find(params[:id])
+      @status = Status.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
       params.require(:status).permit(:supplication, :user_id)
     end
+
+    def authenticate_admin!
+      redirect_to root_url unless current_user.admin? 
+    end
+
 
 end
