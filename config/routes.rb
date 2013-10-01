@@ -13,8 +13,8 @@ end
   end
 
   resources :statuses
-  get 'feed', to: 'admin/statuses#index', as: :feed
-  root to: 'admin/statuses#index'
+  get 'feed', to: 'statuses#index', as: :feed
+  root to: 'statuses#index'
 
   get '/:id', to: 'profiles#show'
 
