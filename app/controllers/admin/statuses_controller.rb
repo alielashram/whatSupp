@@ -47,7 +47,7 @@ class Admin::StatusesController < ApplicationController
   def destroy
     @status.destroy
     respond_to do |format|
-        format.html { redirect_to statuses_url }
+        format.html { redirect_to admin_statuses_url }
     end
   end
 
@@ -63,7 +63,7 @@ class Admin::StatusesController < ApplicationController
     end
 
     def authenticate_admin!
-      redirect_to root_url unless current_user.admin? 
+      redirect_to admin_status_url unless current_user.admin? 
     end
 
 
