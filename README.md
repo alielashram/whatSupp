@@ -15,5 +15,9 @@ whatSupp? can be found online at whatsupp.herokuapp.com
 
 ![Screenshot 1](app/assets/images/Screen shot 2013-10-10 at 10.45.29 AM.png)
 
+## License
+
+MIT: http://aliel.mit-license.org/
+
 
 
